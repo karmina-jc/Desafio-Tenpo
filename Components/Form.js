@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal, Button, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Modal, Button, TextInput, Image, Alert } from 'react-native';
 import { MaterialCommunityIcons as Icon } from 'react-native-vector-icons'
 
 
@@ -40,11 +40,14 @@ export default function Form() {
               placeholder='Explícanos a detalle la situación'/>
 
              <View style={styles.containerBtn}>
-             <Button
-              color={'#00BAA4'}
-              style={styles.btnSend}
-              title='Enviar'
-              onPress={()=>setModal(false)}/> 
+                <Button
+                color={'#00BAA4'}
+                style={styles.btnSend}
+                title='Enviar'
+                onPress={()=>{
+                  Alert.alert('¡Tu reclamo ha sido enviado con éxito!',
+                  'Solucionaremos el problema lo más pronto posible')
+                  setModal(false)}}/> 
              </View>
                         
             </View>  
@@ -53,7 +56,6 @@ export default function Form() {
         </Modal>
 
         <View style={styles.containerFaq}>
-          <Text style={styles.titleText}>En caso de problemas:</Text>
           <View style={styles.question}>
             <TouchableOpacity style={styles.button} onPress={openModal}>
               <Icon
@@ -84,7 +86,6 @@ export default function Form() {
               /> 
               <Text style={styles.textFaq}>¿No se pudo realizar tu retiro de dinero?</Text>
             </TouchableOpacity>
-            <View style={styles.divider}></View>
           </View> 
 
         </View>
@@ -103,27 +104,23 @@ export default function Form() {
   }
   
   const styles = StyleSheet.create({
-    titleText: {
-      padding: '2%',
-      fontSize: 14,
-      color: "#595959",
-      fontFamily: "Gotham-Medium",
-    },
     container: {
       flex: 1,
       backgroundColor: '#F1F1F1',
       justifyContent: 'flex-end',
       width:'100%' ,
+      alignItems: "center",
+
     },
 
     containerFaq: {      
       justifyContent: 'space-evenly',
       backgroundColor: '#F7F7F7',
       borderRadius: 8,
-      marginLeft:16,
-      marginRight: 16,
-      paddingTop: 8,
-      paddingBottom: 8,
+      width: "92%",
+      marginTop:"25%",
+      paddingTop: "0.5%",
+      paddingBottom: "5%",
      
     },
 
@@ -166,10 +163,10 @@ export default function Form() {
 
     chatboxContainer: {  
       marginRight: 16,
+      alignSelf: 'flex-end',
     },
 
     chatbox: {
-      alignSelf: 'flex-end',
       height:50,
       width: 50,
       marginBottom: 10,
@@ -221,11 +218,6 @@ export default function Form() {
       marginTop: 14,
       color: '#00BAA4'
     },
-
-    btnSend: {
-      color: '#00BAA4'
-    }
-
 
   });
 

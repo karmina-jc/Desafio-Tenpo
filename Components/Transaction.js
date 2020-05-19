@@ -18,11 +18,10 @@ function Transaction({navigation}) {
 }
 
 export default Transaction;
-
 const styles = StyleSheet.create({
     container: {
         flex:1,
         alignItems:'center',
-        paddingTop:30,
+        paddingTop:40,
     },
 })

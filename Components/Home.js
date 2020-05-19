@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
       marginTop:10,
       marginBottom:10,
     },
-
     body: {
       flex : 1,
       flexDirection: "column",
@@ -166,7 +165,6 @@ const styles = StyleSheet.create({
       width:100,
       backgroundColor: '#D4F9F5',
     },
-
     amountDisable:{
       color:'#ADADAD',
       fontFamily:'Gotham-Bold',
@@ -175,7 +173,6 @@ const styles = StyleSheet.create({
       textAlign:'center',
       paddingTop:10,
     },
-
     amount:{
       color:'#00BAA4',
       fontFamily:'Gotham-Bold',
@@ -187,7 +184,7 @@ const styles = StyleSheet.create({
 
     type:{
       fontSize:14,
-      width:120,
+      width:130,
       color: '#595959',
       fontFamily: 'Gotham-Book',
       marginTop:5, 
